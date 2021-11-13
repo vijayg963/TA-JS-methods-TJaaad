@@ -137,4 +137,6 @@ console.log(length30.padEnd(length30.length+5, '.'));
 21. Find out does quote, from, to starts with "A"
 */
 console.log(quote.startsWith("A"));
+console.log(from.startsWith("A"));
+console.log(to.startsWith("A"));
 
