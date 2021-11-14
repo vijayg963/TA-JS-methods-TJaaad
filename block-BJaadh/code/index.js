@@ -87,12 +87,23 @@ numbers.forEach((number) => {
 strings.unshift("This");
 
 // - Make a subset of numbers array [18,9,7,11]
+console.log(numbers.slice(3,7));
 
 // - Make a subset of strings array ['a','collection']
+console.log(strings.slice(3,5));
 
 // - Replace 12 & 18 with 1221 and 1881
-let number12 = numbers.replace(12,1221);
-let number18 = numbers.replace(`18`,`1881`);
+// let number12 = numbers.replace(12,1221);
+// let number18 = numbers.replace(`18`,`1881`);
+numbers.mpa((num)=>{
+  if (num=== 12){
+    return 1221;
+  } else if (num ===18){
+    return 1881;
+  } else{
+    return num;
+  }
+});
 
 // - Replace words in strings array with the length of the word
 
@@ -110,13 +121,32 @@ var customers = [
 ];
 // - Find all customers whose firstname starts with 'J'
 var startsWithj = customers.filter((customer)=>{
-  return customer[0]firstname.startWith("J")
+  customer.firstname.startWith("J")
 })
 
 // - Create new array with only first name
+var firstnameCustomers = customers.map(
+  (customer)=> customer.firstname
+);
 
 // - Create new array with all the full names (ex: "Joe Blogs")
+var fullName = customers.map(
+  (customer)=> ${customer.firstname}+ ${customer.lastname}
+);
 
 // - Sort the array created above alphabetically
+...fullName.sort();
 
 // - Create a new array that contains only user who has at least one vowel in the firstname.
+let vowelCustomer = customers.filter((customer)=>{
+  if (
+    customer.firstname.toLowerCase().includes("a") || 
+     customer.firstname.toLowerCase().includes("e") ||
+      customer.firstname.toLowerCase().includes("i") ||
+       customer.firstname.toLowerCase().includes("o") ||
+        customer.firstname.toLowerCase().includes("u")
+  ) {return true;
+  } else {
+    return false ;
+  }
+})
