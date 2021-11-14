@@ -10,8 +10,8 @@ function double(num) {
 }
 let doubleNum = numbers.forEach(double);
 ```
-![](./img/main.png)
 
+![](./img/forEach-Alert.png)
 
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
@@ -21,6 +21,8 @@ function double(num) {
 let doubleNum = numbers.forEach(double);
 ```
 
+![](./img/forEach-return.png)
+
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
 function double(num) {
@@ -28,6 +30,8 @@ function double(num) {
 }
 let doubleNum = numbers.forEach(double);
 ```
+
+![](./img/forEach-Console.png)
 
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
@@ -37,6 +41,8 @@ function double(num) {
 let doubleNumbers = numbers.map(double);
 ```
 
+![](./img/map-return.png)
+
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
 function addTwo(num) {
@@ -45,6 +51,8 @@ function addTwo(num) {
 let doubleNumbers = numbers.map(addTwo);
 ```
 
+![](./img/map-addTwo.png)
+
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
 function addTwo(num) {
@@ -52,6 +60,8 @@ function addTwo(num) {
 }
 let doubleNumbers = numbers.map(addTwo);
 ```
+
+![](./img/map-console.png)
 
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
@@ -61,6 +71,8 @@ function addTwo(num) {
 let doubleNumbers = numbers.map(addTwo);
 ```
 
+![](./img/map-alert.png)
+
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
 function isOdd(num) {
@@ -68,6 +80,8 @@ function isOdd(num) {
 }
 let oddNumbers = numbers.filter(isOdd);
 ```
+
+![](./img/filter-issOdd.png)
 
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
@@ -77,6 +91,8 @@ function test(num) {
 let filteredNumbers = numbers.filter(test);
 ```
 
+![](./img/filter-return.png)
+
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
 function test(num) {
@@ -85,18 +101,24 @@ function test(num) {
 let filteredNumbers = numbers.filter(test);
 ```
 
+![](./img/filter-consol.png)
+
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
-function add(accumulator, currentValue) {
-  return accumulator + currentValue;
+function add(accu, cv) {
+  return accu + cv;
 }
 let sum = numbers.reduce(add);
 ```
 
+![](./img/reduce-return.png)
+
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
-function add(accumulator, currentValue) {
-  console.log(accumulator + currentValue);
+function add(accu, cv) {
+  console.log(accu + cv);
 }
 let sum = numbers.reduce(add);
 ```
+
+![](./img/reduced-console.png)
