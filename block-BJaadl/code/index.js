@@ -15,9 +15,13 @@ let findLongestWord = words[0];
 words.forEach((word) => {
   if (word.length > findLongestWord.length) {
     findLongestWord = word;
-    console.log(findLongestWord);
+    console.log(`the longest word in Array ${findLongestWord}`);
   }
 });
+
+// function findLongestWord(array) {
+//   return [...array].sort((a, b) => a.length - b.length).pop();
+// }
 
 // - Convert the above array "words" into an array of length of word instead of word.
 let wordNumber = words.map((word) => word.length);
@@ -125,9 +129,10 @@ numbers.forEach((num) => {
 console.log(oddNumber);
 
 // - Create a new array that should have true for even number and false for odd numbers.
-let booleanNum = numbers.every(() => {
-  return evenNumber && oddNumber ? "true" : "false";
-});
+// let booleanNum = numbers.every(() => {
+//   return evenNumber && oddNumber ? "true" : "false";
+// });
+let booleanNum = numbers.map((num) => num % 2 === 0);
 
 console.log(booleanNum);
 
@@ -147,9 +152,10 @@ let sumofArray = numbers.reduce(sumAll);
 console.log(sumofArray);
 
 //- Write a function averageNumbers that receives an array of numbers and calculate the average of the numbers
-let avrageOf = numbers.reduce((sum, cv) => {
-  return (sum + cv) / numbers.length;
-});
+let avrageOf =
+  numbers.reduce((sum, cv) => {
+    return sum + cv;
+  }, 0) / numbers.length;
 
 console.log(avrageOf);
 
@@ -171,9 +177,11 @@ let strings = [
 function averageWordLength(words) {
   return (
     words
-      .map((word) => word.length)
+      .map((w) => w.length)
       .reduce((acc, cv) => {
         return acc + cv;
       }, 0) / words.length
   );
 }
+
+console.log(averageWordLength(words));
