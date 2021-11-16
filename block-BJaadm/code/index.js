@@ -148,6 +148,14 @@ highGinfemale = highGinfemale.sort((a, b) => b - a);
 console.log(highGinfemale[0]);
 
 // Find the highest grade for people whose name starts with 'J' or 'P'
+let nameWithjp = persons.filter(
+  (person) => person.name.startsWith("J") || person.name.startsWith("P")
+);
+
+nameWithjp = nameWithjp.map((person) => person.grade);
+
+let highestGradeinjp = nameWithjp.sort((a, b) => b - a);
+console.log(highestGradeinjp[0]);
 
 // Sort the peopleGrade in ascending order and log the value of peopleGrade. Notice did the elements of peopleGrade got changed?
 let ascendingGrade = peopleGrade.sort((a, b) => b - a);
