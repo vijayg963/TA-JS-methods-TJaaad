@@ -1,46 +1,85 @@
 let persons = [
-  { name: 'John', grade: 8, sex: 'M' },
-  { name: 'Sarah', grade: 12, sex: 'F' },
-  { name: 'Bob', grade: 16, sex: 'M' },
-  { name: 'Johnny', grade: 2, sex: 'M' },
-  { name: 'Ethan', grade: 4, sex: 'M' },
-  { name: 'Paula', grade: 18, sex: 'F' },
-  { name: 'Donald', grade: 5, sex: 'M' },
-  { name: 'Jennifer', grade: 13, sex: 'F' },
-  { name: 'Courtney', grade: 15, sex: 'F' },
-  { name: 'Jane', grade: 9, sex: 'F' },
-  { name: 'John', grade: 17, sex: 'M' },
-  { name: 'Arya', grade: 14, sex: 'F' },
+  { name: "John", grade: 8, sex: "M" },
+  { name: "Sarah", grade: 12, sex: "F" },
+  { name: "Bob", grade: 16, sex: "M" },
+  { name: "Johnny", grade: 2, sex: "M" },
+  { name: "Ethan", grade: 4, sex: "M" },
+  { name: "Paula", grade: 18, sex: "F" },
+  { name: "Donald", grade: 5, sex: "M" },
+  { name: "Jennifer", grade: 13, sex: "F" },
+  { name: "Courtney", grade: 15, sex: "F" },
+  { name: "Jane", grade: 9, sex: "F" },
+  { name: "John", grade: 17, sex: "M" },
+  { name: "Arya", grade: 14, sex: "F" },
 ];
 
 // NOTE: Use reduce method whereever you can to solve this exercise:
 
 // Find the average grade
+let personsGrade = [];
+persons.filter((p) => personsGrade.push(p.grade));
+
+console.log(personsGrade.reduce((accu, cv) => accu + cv) / personsGrade.length);
 
 // Find the average grade of male
+let maleFiltered = persons.filter((p) => p.sex === "M");
+
+let peopleGradeMale = [];
+maleFiltered.filter((p) => peopleGradeMale.push(p.grade));
+
+let avrageofMalegrad = peopleGradeMale.reduce((accu, cv) => accu + cv);
+
+console.log(avrageofMalegrad / maleFiltered.length);
 
 // Find the average grade of female
+let femaleFilter = persons.filter((p) => p.sex === "F");
+
+let peopleGradeFemale = [];
+femaleFilter.filter((p) => peopleGradeFemale.push(p.grade));
+
+let avrageofFemalegrade = peopleGradeFemale.reduce((accu, cv) => accu + cv);
+
+console.log(avrageofFemalegrade / femaleFilter.length);
 
 // Find the highest grade
+let shortGrade = [...personsGrade].sort((a, b) => b - a);
+
+console.log(shortGrade[0]);
 
 // Find the highest grade in male
+let highestGradeMale = [...peopleGradeMale].sort((a, b) => b - a);
+
+console.log(highestGradeMale[0]);
 
 // Find the highest grade in female
+let highestGradeFemale = [...peopleGradeFemale].sort((a, b) => a - b);
+
+console.log(highestGradeFemale.pop());
 
 // Find the highest grade for people whose name starts with 'J' or 'P'
+let filterPersonwithJp = persons.filter(
+  (p) => p.name.startsWith("J") || p.name.startsWith("P")
+);
+
+let gradeOfJp = [];
+filterPersonwithJp.filter((p) => gradeOfJp.push(p.grade));
+
+gradeOfJp.sort((a, b) => b - a);
+
+console.log(gradeOfJp[0]);
 
 const fruitBasket = [
-  'banana',
-  'cherry',
-  'orange',
-  'apple',
-  'cherry',
-  'orange',
-  'apple',
-  'banana',
-  'cherry',
-  'orange',
-  'fig',
+  "banana",
+  "cherry",
+  "orange",
+  "apple",
+  "cherry",
+  "orange",
+  "apple",
+  "banana",
+  "cherry",
+  "orange",
+  "fig",
 ];
 
 /* 
@@ -51,6 +90,16 @@ that fruit has appeared in the array. Store it in new variable fruitsObj
 Output: 
 {banana: 2, cherry: 3, orange: 3, apple: 2, fig: 1}
 */
+let fruitObj = fruitBasket.reduce((acc, cv) => {
+  if (acc[cv]) {
+    acc[cv] = acc[cv] + 1;
+  } else {
+    acc[cv] = 1;
+  }
+  return acc;
+}, {});
+
+console.log(fruitObj);
 
 /* 
 
@@ -61,6 +110,12 @@ Output:
 
 [['banana', 2], ['cherry', 3], ['orange', 3], ['apple', 2], ['fig', 1]]
 */
+let fruitsArray = Object.keys(fruitObj).reduce((acc, cv) => {
+  acc = acc.concat([[cv, fruitObj[cv]]]);
+  return acc;
+}, []);
+
+console.log(fruitsArray);
 
 const data = [
   [1, 2, 3],
@@ -70,6 +125,10 @@ const data = [
 ];
 
 // Using reduce flat data array
+data.reduce((acc, cv) => {
+  acc = acc.concat(cv);
+  return acc;
+}, []);
 
 const dataTwo = [
   [1, 2, 3],
@@ -79,6 +138,7 @@ const dataTwo = [
 ];
 
 // Using reduce flat dataTwo array
+console.log(dataTwo.flat(Infinity));
 
 /*
 
