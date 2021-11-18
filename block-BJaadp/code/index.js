@@ -138,17 +138,35 @@ const dataTwo = [
 ];
 
 // Using reduce flat dataTwo array
-console.log(dataTwo.flat(Infinity));
+dataTwo.reduce((acc, cb) => {
+  acc = acc.concat(cv.flat(Infinity));
+}, []);
 
 /*
 
 Create these functions which accepts a number value and returns a number value:
-  - `increment` adds one to the input value
+  - `increment`} adds one to the input value
   - `double` doubles the input value
   - `decrement` decrement 1 from the value 
   - `triple` triples the input 
   - `half` converts the value to half and return the integer value not decimal (use Math.round(21.5) => 21)
 */
+
+function increment(num) {
+  return num + 1;
+}
+function double(num) {
+  return num * 2;
+}
+function dacrement(num) {
+  return num - 1;
+}
+function triple(num) {
+  return num * 3;
+}
+function half(num) {
+  return Math.round(num / 2);
+}
 
 let pipeline = [
   increment,
@@ -171,9 +189,13 @@ EXAMPLE:
   increment(3) - return 4
   double(4) - return 8
   decrement(8) - return 7
-
+ 
   ...
 */
+pipeline.reduce((acc, cv) => {
+  acc = cv(acc);
+  return acc;
+}, 3);
 
 let pipeline2 = [
   increment,
@@ -190,3 +212,8 @@ let pipeline2 = [
 ];
 
 // Find the output using pipeline2 the initial value if 8
+
+pipeline2.reduce((acc, cv) => {
+  acc = cv(acc);
+  return acc;
+}, 8);
